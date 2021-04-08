@@ -26,6 +26,12 @@ class HomeController extends Controller
         $request->user()->authorizeRoles(['user', 'admin']);
         return view('home');
     }
+    public function index2(Request $request)
+    {
+        $request->user()->authorizeRoles(['user', 'admin']);
+        return view('layouts.agregarcurso');
+    }
+    
     public function store(Request $request)
     {
         $personaAgregar= new crud;

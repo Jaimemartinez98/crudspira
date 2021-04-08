@@ -28,14 +28,24 @@
             <a class="nav-link" href="#"></a>
           </li>          
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Personas </a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estudiantes </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{route('home')}}">Agregar Persona</a>              
-               <a class="dropdown-item" href="{{route('leer')}}">Ver personas</a>              
-               
+            <a class="dropdown-item" href="{{route('home')}}">Agregar Estudiantes</a>              
+               <a class="dropdown-item" href="{{route('leer')}}">Ver Estudiantes</a>  
+                          
+                <div class="dropdown-divider"></div>
+             
+              </div>              
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">        
+               <a class="dropdown-item" href="{{route('addcurso')}}">Agregar Cursos</a>      
+               <a class="dropdown-item" href="{{route('leer2')}}">Ver Cursos</a>        
                 <div class="dropdown-divider"></div>
              
               </div>
+             
           </li>
           <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 
 use Illuminate\Http\Request;
-
 use App\Models\Personas;
+use App\Models\Cursos;
 
 class PersonasController extends Controller
 {
@@ -59,16 +59,43 @@ class PersonasController extends Controller
       
         return back()->with('agregar','La persona se agrego correctamente');
     }
+    public function store2(Request $request)
+    {
+        $cursoAgregar= new Cursos;
+        $request->validate(
+            [
+                'nombrecurso'=>'required',
+                'intensidadhoraria'=>'required'             
+                
+            ]
+            );
+        $cursoAgregar->nombrecurso = $request->nombrecurso;  
+        $cursoAgregar->intensidadhoraria = $request->intensidadhoraria;               
+        $cursoAgregar->save();
+      
+        return back()->with('agregar','El curso se agrego correctamente');
+    }
     public function leer()
     {
         
         $users['personas']=Personas::all();
         return view ('layouts.ver', $users);   
     }
+    public function leer2()
+    {
+        
+        $cursos['cursos']=Cursos::all();
+        return view ('layouts.vercursos', $cursos);   
+    }
     public function edit1($id)
     {
         $Actualizar['personas']=Personas::findOrFail($id);    
         return view('layouts.editar', $Actualizar);
+    }
+    public function edit2($id)
+    {
+        $Actualizar['cursos']=Cursos::findOrFail($id);    
+        return view('layouts.editarcursos', $Actualizar);
     }
     public function updatepersonas(Request $request, $id)
     {
@@ -79,7 +106,18 @@ class PersonasController extends Controller
         $personasUpdate->direccion = $request->direccion;
         $personasUpdate->barrio = $request->barrio;          
         $personasUpdate->save();
-        return back()->with('update','La nota ha sido actualizada correctamente');
+        $users['personas']=Personas::all();
+        return view ('layouts.ver', $users);  
+    }
+    public function updatecursos(Request $request, $id)
+    {
+        $personasUpdate= Cursos::findOrFail($id);
+        $personasUpdate->nombrecurso = $request->nombre1;
+        $personasUpdate->intensidadhoraria = $request->intensidad;
+        $personasUpdate->save();
+        $cursos['cursos']=Cursos::all();
+        return view ('layouts.vercursos', $cursos);  
+       
     }
     /**
      * Display the specified resource.

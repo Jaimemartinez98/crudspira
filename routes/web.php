@@ -20,9 +20,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/addcurso', [App\Http\Controllers\HomeController::class, 'index2'])->name('addcurso');
+
+
 
 Route::post('/agregar', 'App\Http\Controllers\PersonasController@store')->name('store'); 
+Route::post('/agregar2', 'App\Http\Controllers\PersonasController@store2')->name('store2');
 Route::get('/listpersonas', 'App\Http\Controllers\PersonasController@leer')->name('leer'); 
+Route::get('/listcursos', 'App\Http\Controllers\PersonasController@leer2')->name('leer2'); 
 
 Route::get('/editar/{id}', 'App\Http\Controllers\PersonasController@edit1')->name('editar1');
+Route::get('/editar2/{id}', 'App\Http\Controllers\PersonasController@edit2')->name('editar2');
+
 Route::put('/updateacudiente/{id}','App\Http\Controllers\PersonasController@updatepersonas')->name('update2');
+Route::put('/updatecursos/{id}','App\Http\Controllers\PersonasController@updatecursos')->name('update3');
