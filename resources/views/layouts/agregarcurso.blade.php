@@ -7,23 +7,32 @@
     @csrf  
 <form>
   
-    <div class="row " >
-      <label name="idc" id="idc" for="exampleInputEmail1"></label>
-      
-      <div class="col-md-12 col-sm-6  form-group has-feedback " >
-        <label for="exampleInputEmail1">Curso</label>
-        <input type="text" name="nombrecurso" id="nombrecurso" class="form-control" placeholder="Ingrese el curso" required>
-      </div>
-      <div class="col-md-12 col-sm-6  form-group has-feedback">
-        <label for="exampleInputEmail1">Intensidad Horaria</label>
-        <input type="number" name="intensidadhoraria" id="intensidadhoraria" class="form-control" placeholder="intensidad horaria" required>
-      </div>
-          
-      <button type="submit" class="btn btn-success btn-block">Enviar</button>
-          
-    </div>
+    
        
-    </div>
+    </div> 
+    <br>
+    <div class="card">
+      <div class="card-body">
+      <h4 class="card-title">Ingreso de cursos</h4>
+  <div class="row">
+      <div class="col-md-12 m-auto">
+
+            <!-- aqui crea las cajas de texto-->  
+          <div class="form-group">
+            <input type="text" name="nombrecurso" id="nombrecurso" class="form-control" placeholder="Ingrese el curso" required>
+          </div>
+          <!--fin caja texto-->
+              <!-- aqui crea las cajas de texto-->  
+              <div class="form-group">
+                <input type="number" name="intensidadhoraria" id="intensidadhoraria" class="form-control" placeholder="intensidad horaria" required>
+              </div>
+              <!--fin caja texto-->
+              <button type="submit" class="btn btn-success btn-block">Enviar</button>
+      </div>
+
+  </div>
+  </div>
+  </div>
   </form>
 
   
