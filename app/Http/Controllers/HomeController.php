@@ -26,17 +26,22 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $request->user()->authorizeRoles(['user', 'admin']);
+        $request->user()->authorizeRoles(['user', 'admin', 'estudiante']);
         return view('home');
+    }
+    public function index1(Request $request)
+    {
+        $request->user()->authorizeRoles(['admin']);
+        return view('layouts.agregarpersona');
     }
     public function index2(Request $request)
     {
-        $request->user()->authorizeRoles(['user', 'admin']);
+        $request->user()->authorizeRoles(['admin']);
         return view('layouts.agregarcurso');
     }
     public function index3(Request $request)
     {
-        $request->user()->authorizeRoles(['user', 'admin']);
+        $request->user()->authorizeRoles(['admin']);
         $users['personas']=Personas::all();   
         $users2['cursos']=Cursos::all();        
         return view('layouts.agregarcursosaestudiantes', $users, $users2);

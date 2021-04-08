@@ -34,7 +34,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estudiantes </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="{{route('home')}}">Agregar Estudiantes</a>              
+            <a class="dropdown-item" href="{{route('addperso')}}">Agregar Estudiantes</a>              
                <a class="dropdown-item" href="{{route('leer')}}">Ver Estudiantes</a>  
                           
                 <div class="dropdown-divider"></div>
