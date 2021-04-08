@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Personas;
 use App\Models\Cursos;
+use App\Models\curso_estudiante;
 
 class PersonasController extends Controller
 {
@@ -75,6 +76,22 @@ class PersonasController extends Controller
       
         return back()->with('agregar','El curso se agrego correctamente');
     }
+    public function store3(Request $request)
+    {
+        $cursoestudianteAgregar= new curso_estudiante;
+        $request->validate(
+            [
+                'curso_id'=>'required',
+                'persona_id'=>'required'             
+                
+            ]
+            );
+        $cursoestudianteAgregar->curso_id = $request->curso_id;  
+        $cursoestudianteAgregar->persona_id = $request->persona_id;               
+        $cursoestudianteAgregar->save();
+      
+        return back()->with('agregar','El curso se agrego correctamente');
+    }
     public function leer()
     {
         
@@ -86,6 +103,12 @@ class PersonasController extends Controller
         
         $cursos['cursos']=Cursos::all();
         return view ('layouts.vercursos', $cursos);   
+    }
+    public function leer3()
+    {
+        
+        $cursosestudiantes['curso_estudiante']=curso_estudiante::all();
+        return view ('layouts.vercursosestudiantes', $cursosestudiantes);   
     }
     public function edit1($id)
     {

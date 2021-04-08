@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Personas;
+use App\Models\Cursos;
+use App\Models\curso_estudiante;
 
 class HomeController extends Controller
 {
@@ -30,6 +33,13 @@ class HomeController extends Controller
     {
         $request->user()->authorizeRoles(['user', 'admin']);
         return view('layouts.agregarcurso');
+    }
+    public function index3(Request $request)
+    {
+        $request->user()->authorizeRoles(['user', 'admin']);
+        $users['personas']=Personas::all();   
+        $users2['cursos']=Cursos::all();        
+        return view('layouts.agregarcursosaestudiantes', $users, $users2);
     }
     
     public function store(Request $request)

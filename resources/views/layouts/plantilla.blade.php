@@ -26,7 +26,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#"></a>
-          </li>          
+          </li>  
+          @if(Auth::user()->hasRole('admin'))        
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Estudiantes </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -47,6 +48,34 @@
               </div>
              
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">        
+               <a class="dropdown-item" href="{{route('addcursoestu')}}">Agregar Cursos a Estudiantes</a>      
+               <a class="dropdown-item" href="{{route('leer3')}}">Ver Cursos Asignados a Estudiantes</a>        
+                <div class="dropdown-divider"></div>
+             
+              </div>
+             
+          </li>
+          @endif
+
+          @if(Auth::user()->hasRole('estudiante'))        
+          
+          
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">        
+                 
+               <a class="dropdown-item" href="{{route('leer3')}}">Ver Cursos Asignados a Estudiantes</a>        
+                <div class="dropdown-divider"></div>
+             
+              </div>
+             
+          </li>
+          @endif
+
+
           <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }} <span class="caret"></span>
