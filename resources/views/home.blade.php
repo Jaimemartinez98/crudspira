@@ -10,7 +10,7 @@
       <label name="idc" id="idc" for="exampleInputEmail1"></label>
       <div class="form-group col-md-6">
         <label for="exampleInputEmail1">Cedula</label>
-        <input type="text" name="cc" id="cc" class="form-control" placeholder="Ingrese su cedula" required>
+        <input type="number" name="cc" id="cc" class="form-control" placeholder="Ingrese su cedula" required>
       </div>
       <div class="form-group col-md-6">
         <label for="exampleInputEmail1">Nombre</label>
@@ -22,7 +22,7 @@
         </div>
         <div class="form-group col-md-6">
             <label for="exampleInputEmail1">Celular</label>
-            <input type="text" name="celular" id="celular" class="form-control" placeholder="Ingrese su celuco" required>
+            <input type="number" name="celular" id="celular" class="form-control" placeholder="Ingrese su celuco" required>
     
           </div>
           <div class="form-group col-md-6">

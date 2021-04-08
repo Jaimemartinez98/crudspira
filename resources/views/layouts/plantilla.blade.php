@@ -49,7 +49,7 @@
              
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos </a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Asignacion de Cursos  </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">        
                <a class="dropdown-item" href="{{route('addcursoestu')}}">Agregar Cursos a Estudiantes</a>      
                <a class="dropdown-item" href="{{route('leer3')}}">Ver Cursos Asignados a Estudiantes</a>        
@@ -64,7 +64,7 @@
           
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cursos </a>
+            <a class="nav-link dropdown-toggle" href="#" id="dropdown10" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Asignacion de Cursos </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">        
                  
                <a class="dropdown-item" href="{{route('leer3')}}">Ver Cursos Asignados a Estudiantes</a>        
